@@ -15,6 +15,6 @@ for /L %%i in (1,1,20) do (
     
     set "fulldomain=!domain!.com"
     echo Attempt %%i: !fulldomain!
-    PING -n 1 !fulldomain! >nul 2>&1   
+    nslookup -timeout=1 !fulldomain! >nul 2>&1
     timeout /t 1 >nul
 )
